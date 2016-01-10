@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell" do |s|
-    s.inline = "npm install -g coffee-script forever"
+    s.inline = "npm install -g coffee-script forever gulp"
     s.privileged = false
   end
 end
