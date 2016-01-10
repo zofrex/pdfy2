@@ -10,3 +10,4 @@
 /thumbnails/
 /logs/
 .sass-cache
+.vagrant
