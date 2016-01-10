@@ -23,6 +23,9 @@ router.get "/", (req, res) ->
 	.then (latestDocuments) ->
 		res.render "index",
 			latestDocuments: latestDocuments.toJSON()
+	.catch (err) ->
+		res.render "index",
+			latestDocuments: []
 
 router.get "/tos", (req, res) ->
 	res.render "tos"
