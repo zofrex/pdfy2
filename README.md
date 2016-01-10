@@ -13,6 +13,8 @@ cd pdfy2
 gulp
 ```
 
+Visit the website at http://localhost:3000
+
 ### Manual
 
 * Install authbind, graphicsmagick, and mysql
