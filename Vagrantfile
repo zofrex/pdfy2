@@ -16,6 +16,8 @@ Vagrant.configure(2) do |config|
     vb.cpus = 2
   end
 
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+
   config.vm.provision "shell", inline: "apt-get update"
 
   config.vm.provision "puppet" do |puppet|
