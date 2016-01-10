@@ -6,9 +6,15 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder ".", "/home/vagrant/pdfy2"
 
-  # config.vm.provider "virtualbox" do |vb|
-  #   vb.memory = "1024"
-  # end
+  config.vm.provider "vmware_fusion" do |vm|
+    vm.vmx["memsize"] = 2048
+    vm.vmx["numvcpus"] = 2
+  end
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 2048
+    vb.cpus = 2
+  end
 
   config.vm.provision "puppet" do |puppet|
     puppet.environment = "development"
