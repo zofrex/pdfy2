@@ -20,4 +20,9 @@ Vagrant.configure(2) do |config|
     puppet.environment = "development"
     puppet.environment_path = "dev/environments"
   end
+
+  config.vm.provision "shell" do |s|
+    s.inline = "npm install -g coffee-script"
+    s.privileged = false
+  end
 end
