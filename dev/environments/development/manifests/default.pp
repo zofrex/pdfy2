@@ -1,3 +1,5 @@
+include '::mysql::server'
+
 class { 'nvm':
   user => 'vagrant',
   nvm_dir => '/home/vagrant/.nvm',
@@ -18,4 +20,11 @@ file { '/etc/authbind/byport/443':
   ensure  => 'present',
   owner => 'vagrant',
   mode => '755',
+}
+
+mysql::db { 'pdf':
+  user     => 'root',
+  password => '',
+  host     => 'localhost',
+  grant    => ['ALL'],
 }
