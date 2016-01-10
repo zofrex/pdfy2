@@ -4,6 +4,17 @@ This is the source code for [PDFy](https://pdf.yt/).
 
 ## Setup
 
+### Using Vagrant image
+
+```
+vagrant up
+vagrant ssh
+cd pdfy2
+gulp
+```
+
+### Manual
+
 * Install authbind, graphicsmagick, and mysql
 * Install nodejs 0.12 (you probably want to use nvm)
 * Run `npm install -g coffee-script forever`
