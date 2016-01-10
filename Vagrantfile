@@ -16,13 +16,15 @@ Vagrant.configure(2) do |config|
     vb.cpus = 2
   end
 
+  config.vm.provision "shell", inline: "apt-get update"
+
   config.vm.provision "puppet" do |puppet|
     puppet.environment = "development"
     puppet.environment_path = "dev/environments"
   end
 
   config.vm.provision "shell" do |s|
-    s.inline = "npm install -g coffee-script"
+    s.inline = "npm install -g coffee-script forever"
     s.privileged = false
   end
 end
